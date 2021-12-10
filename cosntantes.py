@@ -9,7 +9,7 @@ TITULO='MADE AMERICA'
 FPS= 30
 
 SPRITESHEET = 'man.png'
-LOGO = 'logodohomi.png'
+LOGO = 'download.jpg'
 
 #fonte
 FONT = 'arial'
