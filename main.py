@@ -63,7 +63,7 @@ class Game():
         '''self.spritesheet = os.path.join(diretorio_imagens,game_constants.SPRITESHEET)
         self.man_start_logo = os.path.join(diretorio_imagens, game_constants.LOGO)
         self.man_start = pygame.image.load(self.man_start_logo).convert()'''
-
+    #load
     def load_states(self):
         self.menu_screen = Menu(self)
         self.state_stack.append(self.menu_screen)
@@ -77,14 +77,15 @@ class Game():
             self.update()
             self.render()
 
+    
     def draw_text(self, texto,tamanho,cor,x,y):
-
         fonte = pygame.font.Font(self.font,tamanho)
         texto = fonte.render(texto, True, cor)
         texto_rect = texto.get_rect()
         texto_rect.midtop=(x,y)
         self.screen.blit(texto,texto_rect)
     
+
 
 
 
