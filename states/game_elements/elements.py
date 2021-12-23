@@ -12,7 +12,9 @@ from random import randint
 class Nav_player():
     def __init__(self,game):
 
-        self.nav_image = pygame.image.load(os.path.join(game.dir_imagens,game_constants.NAV_IMAGE))
+        nav_number = randint(1,4)
+
+        self.nav_image = pygame.image.load(os.path.join(game.dir_imagens,game_constants.NAV_IMAGE + str(nav_number) + '.png'))
         self.nav_image = pygame.transform.scale(self.nav_image, (40*2, 40*2))
         self.nav_rect = self.nav_image.get_rect()
         self.screen_rect = game.screen.get_rect()
@@ -32,7 +34,7 @@ class Nav_player():
 
         if actions['right']:
             if self.nav_rect.x < game_constants.WIDTH - 100:
-                self.nav_rect.x+= 100*self.vel*delta_time
+                self.nav_rect.x += 100*self.vel*delta_time
                 actions['right'] = False
         
         if actions['left']:

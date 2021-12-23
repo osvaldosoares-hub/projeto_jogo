@@ -11,13 +11,22 @@ TITLE='CORONIAL WAR'
 #fps
 FPS= 30
 
-NAV_IMAGE  = 'nav 01.png'
+NAV_IMAGE  = 'nav 0'
+TRUE_BOSS = 'hitler.jpg'
 CORONA = 'corona.png'
 LOGO = 'download.jpg'
 
 #fonte
 FONT = 'arial'
-MUSIC= 'Aula3_audios_intermission.WAV'
+TYPEWRITER_FONT = 'veteran typewriter.ttf'
+MUSIC = 'Aula3_audios_intermission.WAV'
+LAUGH = 'Scary-Breath-Laugh.OGG'
+TYPEWRITER_01 = 'hard_typewriter_click.OGG'
+TYPEWRITER_02 = 'typewriter_soft_click.OGG'
+TYPEWRITER_03 = 'mechanical_typewriter_hit.OGG'
+TYPEWRITER_04 = 'mechanical_typewriter.OGG'
+
+
 k_START ='Aula3_audios_munch_1.WAV'
 
 INTRO_PART_01 = "RELTÓRIO DA MISSÃO"

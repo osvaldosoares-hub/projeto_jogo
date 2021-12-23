@@ -125,10 +125,24 @@ class Play_stage_two(State):
         self.game.display_text_animation(game_constants.END_PART_08, game_constants.YELLOW)
         pygame.time.wait(1000)
 
+        boss_image = pygame.image.load(os.path.join(self.game.dir_imagens,game_constants.TRUE_BOSS))
+        boss_rect = boss_image.get_rect()
+        boss_rect.centerx = game_constants.HEIGTH/2
+        boss_rect.centery = game_constants.WIDTH/2
+        self.game.screen.fill(game_constants.BLACK)
+        self.game.screen.blit(boss_image, boss_rect)
+        pygame.display.flip()
+        laugh = pygame.mixer.Sound(os.path.join(self.game.dir_audios,game_constants.LAUGH))
+        laugh.play()
+        pygame.time.wait(8000)
+        laugh.stop()
+
         self.game.screen.fill(game_constants.BLACK)
         self.game.draw_text('OBRIGADO POR JOGAR =)',60,game_constants.WHITE,game_constants.WIDTH/2,200)
         pygame.display.flip()
         pygame.time.wait(2000)
+
+
         
         self.game.playing = False
         self.game.runing = False
