@@ -154,7 +154,7 @@ class Game():
 
             self.draw_text(vac[i-1],15, game_constants.BLACK, coordenatex + 40,coordenatey + 80)
             
-            print(coordenatex,coordenatey)
+            
             
         pygame.display.update()
         pygame.time.wait(6000)
