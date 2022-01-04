@@ -112,3 +112,18 @@ class Omicron_bulet(Bullet):
     def update(self, delta_time, actions):
 
         self.rect.y += delta_time*self.vel*5
+
+
+class Enemys():
+    
+    def __init__(self):
+        pass
+
+    def create_virus(self,game,corona_base_group,number):
+           
+        corona =  Corona_base(game)
+        corona_base_group.add(corona)
+
+        for i in range(0,number):
+            new_corona = Corona_base(game)
+            corona_base_group.add(new_corona)

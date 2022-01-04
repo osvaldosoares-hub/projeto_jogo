@@ -159,6 +159,48 @@ class Game():
         pygame.display.update()
         pygame.time.wait(6000)
 
+    
+    def end(self):
+
+        self.display_text_animation(game_constants.END_PART_01, game_constants.BLACK)
+        pygame.time.wait(1000)
+        self.display_text_animation(game_constants.END_PART_02, game_constants.BLACK)
+        pygame.time.wait(100)
+        self.display_text_animation(game_constants.END_PART_03, game_constants.GREEN)
+        pygame.time.wait(300)
+        self.display_text_animation(game_constants.END_PART_04, game_constants.BLACK)
+        pygame.time.wait(100)
+        self.display_text_animation(game_constants.END_PART_05, game_constants.BLACK)
+        pygame.time.wait(1000)
+        self.display_text_animation(game_constants.END_PART_06, game_constants.BLACK)
+        pygame.time.wait(100)
+        self.display_text_animation(game_constants.END_PART_07, game_constants.GREEN)
+        pygame.time.wait(1000)
+        self.display_text_animation(game_constants.END_PART_08, game_constants.YELLOW)
+        pygame.time.wait(1000)
+
+        boss_image = pygame.image.load(os.path.join(self.dir_imagens,game_constants.TRUE_BOSS))
+        boss_rect = boss_image.get_rect()
+        boss_rect.centerx = game_constants.HEIGTH/2
+        boss_rect.centery = game_constants.WIDTH/2
+        self.screen.fill(game_constants.BLACK)
+        self.screen.blit(boss_image, boss_rect)
+        pygame.display.flip()
+        laugh = pygame.mixer.Sound(os.path.join(self.dir_audios,game_constants.LAUGH))
+        laugh.play()
+        pygame.time.wait(8000)
+        laugh.stop()
+
+        self.screen.fill(game_constants.BLACK)
+        self.draw_text('OBRIGADO POR JOGAR =)',60,game_constants.WHITE,game_constants.WIDTH/2,200)
+        pygame.display.flip()
+        pygame.time.wait(2000)
+
+
+        
+        self.playing = False
+        self.runing = False
+
             
 
             

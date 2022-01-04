@@ -5,7 +5,7 @@ import pygame, os
 import game_constants
 from pygame.sprite import Group, Sprite
 from random import randint
-from states.game_elements.elements import Nav_player,Corona_base
+from states.game_elements.elements import Enemys, Nav_player,Corona_base
 
 class Play_stage_one(State):
     def __init__(self, game):
@@ -14,6 +14,7 @@ class Play_stage_one(State):
         self.player = Nav_player(game)
         self.bullet_group = Group()
         self.corona_base_group = Group()
+        self.enemys = Enemys()
         self.level_finish = 0
         self.create = True
         
@@ -26,7 +27,8 @@ class Play_stage_one(State):
         if actions['action1']:
             self.bullet_group.add(self.player.create_bullet())
             if self.create:
-                self.create_virus(self.game)
+               
+                self.enemys.create_virus(self.game,self.corona_base_group,15)
                 self.create = False
 
             actions['action1'] = False
@@ -90,16 +92,6 @@ class Play_stage_one(State):
         self.player.render(surface)
         self.bullet_group.draw(surface)
         self.corona_base_group.draw(surface)
-
-    def create_virus(self,game):
-           
-        corona =  Corona_base(game)
-        self.corona_base_group.add(corona)
-
-        for i in range(0,15):
-            new_corona = Corona_base(game)
-            self.corona_base_group.add(new_corona)
-
 
        
 
