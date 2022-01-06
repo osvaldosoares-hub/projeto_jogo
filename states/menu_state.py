@@ -10,6 +10,7 @@ import os
 class Menu(State):
     def __init__(self, game):
         super().__init__(game)
+        self.waiting=True
 
     def update(self, delta_time, actions):
 
@@ -28,19 +29,19 @@ class Menu(State):
         pygame.display.flip()
         
 
-        esperando=True
-        while esperando:
+        
+        while self.waiting:
             self.game.clock.tick(game_constants.FPS)
             for event in pygame.event.get():
             
                 if event.type == pygame.QUIT:
-                    esperando=False
+                    self.waiting=False
                     self.game.playing = False
                     self.game.runing = False
                 
                 if event.type == pygame.KEYUP and pygame.mixer.music.get_busy() != True:
                     
-                    esperando =False
+                    self.waiting =False
                     pygame.mixer.music.stop()
                     pygame.mixer.Sound(os.path.join(self.game.dir_audios,game_constants.k_START)).play()
          
