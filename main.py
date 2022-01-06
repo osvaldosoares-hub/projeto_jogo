@@ -16,7 +16,7 @@ class Game():
         pygame.display.set_caption(game_constants.TITLE)
         self.runing, self.playing = True, True
         self.rect = self.screen.get_rect()
-        self.actions = {"left": False, "right": False, "up" : False, "down" : False, "action1" : False,"action2" : False}
+        self.actions = {"left": False, "right": False, "action1" : False,"action2" : False}
         self.dt,self.prev_time = 0, 0
         self.font = pygame.font.match_font(game_constants.FONT)
         self.state_stack = []
@@ -36,10 +36,6 @@ class Game():
                         self.actions['left'] = True
                     if event.key == pygame.K_RIGHT:
                         self.actions['right'] = True
-                    if event.key == pygame.K_UP:
-                        self.actions['up'] = True
-                    if event.key == pygame.K_DOWN:
-                        self.actions['down'] = True
                     if event.key == pygame.K_e:
                         self.actions['action2'] = True
     
