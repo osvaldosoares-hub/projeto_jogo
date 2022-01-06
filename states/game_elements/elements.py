@@ -114,7 +114,7 @@ class Omicron_bulet(Bullet):
         self.rect.y += delta_time*self.vel*5
 
 
-class Enemys():
+class Enemies():
     
     def __init__(self):
         pass

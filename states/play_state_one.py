@@ -5,7 +5,7 @@ import pygame, os
 import game_constants
 from pygame.sprite import Group, Sprite
 from random import randint
-from states.game_elements.elements import Enemys, Nav_player,Corona_base 
+from states.game_elements.elements import Enemies, Enemys, Nav_player,Corona_base 
 
 class Play_stage_one(State):
     def __init__(self, game):
@@ -14,7 +14,7 @@ class Play_stage_one(State):
         self.player = Nav_player(game)
         self.bullet_group = Group()
         self.corona_base_group = Group()
-        self.enemys = Enemys()
+        self.enemys = Enemies()
         self.level_finish = 0
         self.create = True
         

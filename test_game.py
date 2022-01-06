@@ -42,7 +42,7 @@ def test_start():
     run = game.runing 
     assert run == True
 
-def test_start():
+def test_play():
 
     play = game.playing
     
