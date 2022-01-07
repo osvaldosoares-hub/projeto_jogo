@@ -4,7 +4,7 @@ import pygame, os
 import game_constants
 from pygame.sprite import Group, Sprite
 from random import randint
-from states.game_elements.elements import Enemies, Enemys, Omicron,Corona_base, Nav_player, Omicron_bulet
+from states.game_elements.elements import Enemies, Omicron,Corona_base, Nav_player, Omicron_bulet
 
 
 class Play_stage_two(State):
